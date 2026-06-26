@@ -24,6 +24,7 @@
         [ # Include the results of the hardware scan.
         self.nixosModules.raggPuterHardware
         self.nixosModules.niri
+        self.nixosModules.stylix
         ];
 
     #flakes
@@ -114,7 +115,7 @@
         kdePackages.ktorrent
     ];
 
-    programs.kdeconnect.enable = true;
+    
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -199,17 +200,12 @@
         #other
         pspp
         #rice
-        xwayland-satellite
         kitty
         alacritty
-        networkmanagerapplet
+        brightnessctl
+        wireplumber
         #kde
         kdePackages.discover
-       
-        kdePackages.kcharselect # Character map
-        kdePackages.kclock # Clock app
-        kdePackages.kcolorchooser # Color picker
-        kdePackages.kolourpaint # Simple paint program
         kdePackages.ksystemlog # System log viewer
         kdePackages.sddm-kcm # SDDM configuration module
         kdiff3 # File/directory comparison tool
@@ -255,18 +251,37 @@
         };
 
     #steam
-        programs.steam = {
+    programs.steam = {
         enable = true;
-        remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-            dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-            localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-        };
+        remotePlay.openFirewall = true;
+        extraCompatPackages = with pkgs; [
+            proton-ge-bin
+        ];
+    };
+
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+        extraPackages = with pkgs; [
+            intel-media-driver
+            intel-vaapi-driver
+            libva-vdpau-driver
+            libvdpau-va-gl
+        ];
+        extraPackages32 = with pkgs; [
+            driversi686Linux.intel-media-driver
+            driversi686Linux.intel-vaapi-driver
+        ];
+    };
+
+        
 
     #environment variables
         environment.variables = {
             JAVA_HOME = "${pkgs.jdk}/lib/openjdk";
             ANDROID_HOME = "/home/ragg/Android/Sdk"; 
             ANDROID_SDK_ROOT = "/home/ragg/Android/Sdk";
+            LIBVA_DRIVER_NAME = "iHD";
         };
         
         programs.nix-ld = {
