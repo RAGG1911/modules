@@ -196,13 +196,16 @@
         #entertainment
         reaper
         mcaselector
+        #other
+        pspp
         #rice
         xwayland-satellite
         kitty
+        alacritty
         networkmanagerapplet
         #kde
         kdePackages.discover
-        kdePackages.kcalc # Calculator
+       
         kdePackages.kcharselect # Character map
         kdePackages.kclock # Clock app
         kdePackages.kcolorchooser # Color picker
