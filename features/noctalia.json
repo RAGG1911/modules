@@ -461,7 +461,7 @@
       "showHeader": true,
       "showKeybinds": true,
       "largeButtonsStyle": true,
-      "largeButtonsLayout": "single-row",
+      "largeButtonsLayout": "grid",
       "powerOptions": [
         {
           "action": "lock",

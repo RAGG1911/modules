@@ -25,6 +25,8 @@
         self.nixosModules.raggPuterHardware
         self.nixosModules.niri
         self.nixosModules.stylix
+        self.nixosModules.raggHomeManager
+        self.nixosModules.raggPuterHome
         ];
 
     #flakes
@@ -198,10 +200,8 @@
         reaper
         mcaselector
         #other
-        pspp
+        
         #rice
-        kitty
-        alacritty
         brightnessctl
         wireplumber
         #kde
