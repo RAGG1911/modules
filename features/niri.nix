@@ -58,6 +58,8 @@
                 "Mod+V".spawn-sh = "code";
                 "Mod+E".spawn-sh = "dolphin";
                 "Mod+S".spawn-sh = "${lib.getExe self'.packages.raggNoctalia} ipc call launcher toggle";
+                "Mod+A".spawn-sh = "${lib.getExe self'.packages.raggNoctalia} ipc call controlCenter toggle";
+                "Mod+Shift+Q".spawn-sh = "${lib.getExe self'.packages.raggNoctalia} ipc call sessionMenu toggle";
 
                 # --- Window management ---
                 "Mod+F".maximize-column = _: {};
