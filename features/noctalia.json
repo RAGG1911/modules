@@ -690,23 +690,23 @@
     "desktopWidgetsEditMode": false,
     "display": {
       "eDP-1": {
-        "connected": true,
-        "height": 768,
         "name": "eDP-1",
-        "physical_height": 170,
-        "physical_width": 310,
-        "refresh_rate": 60059,
+        "connected": true,
         "scale": 1,
-        "transform": "Normal",
-        "vrr_enabled": false,
-        "vrr_supported": false,
         "width": 1366,
+        "height": 768,
         "x": 0,
-        "y": 0
+        "y": 0,
+        "physical_width": 310,
+        "physical_height": 170,
+        "refresh_rate": 60059,
+        "vrr_supported": false,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 0
+      "lastSeenTs": 1782573771000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
