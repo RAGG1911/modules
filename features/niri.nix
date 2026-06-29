@@ -13,6 +13,7 @@
             spawn-at-startup = [
                 (lib.getExe self'.packages.raggNoctalia)
                 (lib.getExe pkgs.xwayland-satellite)
+                "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
             ];
 
             xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;

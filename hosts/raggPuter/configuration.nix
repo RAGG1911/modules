@@ -72,7 +72,7 @@
     '';
     
     #polkit
-        security.polkit.enable = true;
+    security.polkit.enable = true;
 
     # Set your time zone.
     time.timeZone = "America/Panama";
@@ -107,7 +107,6 @@
     };
 
     environment.plasma6.excludePackages = with pkgs; [
-        kdePackages.elisa # Music player
         kdePackages.kdepim-runtime # Akonadi agents
         kdePackages.kmahjongg
         kdePackages.kmines
@@ -186,7 +185,6 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
         #coding
-        vscode
         nodejs
         flutter
         android-studio
@@ -199,12 +197,16 @@
         #entertainment
         reaper
         mcaselector
-        #other
-        
+        #cli
+        htop
+        tree
+        fastfetch
         #rice
         brightnessctl
         wireplumber
+        polkit_gnome
         #kde
+        kdePackages.filelight
         kdePackages.discover
         kdePackages.ksystemlog # System log viewer
         kdePackages.sddm-kcm # SDDM configuration module
